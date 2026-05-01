@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: system-app
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+  datasource:
+    dynamic:
+      enabled: false
+      strict: false
+      primary: master
+
+management:
+  health:
+    diskspace:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+system:
+  datasource:
+    enabled: true
+    primary: master
+    available-keys:
+      - master
+      - slave1
+      - slave2
+  redis:
+    enabled: true
+    sources:
+      cache:
+        host: 127.0.0.1
+        port: 6379
+        database: 0
+      session:
+        host: 127.0.0.1
+        port: 6379
+        database: 1
+      lock:
+        host: 127.0.0.1
+        port: 6379
+        database: 2
