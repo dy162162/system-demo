@@ -15,6 +15,10 @@
         <module>system-bom</module>
         <module>system-common</module>
         <module>system-core</module>
+        <module>system-core-security</module>
+        <module>system-core-data</module>
+        <module>system-core-cache</module>
+        <module>system-core-api</module>
         <module>system-starter</module>
         <module>system-app</module>
     </modules>
