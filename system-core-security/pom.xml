@@ -13,4 +13,17 @@
     <artifactId>system-core-security</artifactId>
     <packaging>jar</packaging>
     <name>system-core-security</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.system.demo</groupId>
+            <artifactId>system-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
